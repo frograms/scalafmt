@@ -81,7 +81,7 @@ link_file () {
 
 link () {
   local overwrite_all=false backup_all=false skip_all=false
-  link_file "$BASE_DIR/$1" "/usr/local/bin/$1"
+  link_file "$BASE_DIR/bin/$1" "/usr/local/bin/$1"
 }
 
 link 'scalafmt'

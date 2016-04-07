@@ -16,7 +16,7 @@ unlink_file () {
 }
 
 unlink () {
-  unlink_file "$BASE_DIR/$1" "/usr/local/bin/$1"
+  unlink_file "$BASE_DIR/bin/$1" "/usr/local/bin/$1"
 }
 
 unlink 'scalafmt'
