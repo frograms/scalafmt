@@ -1,6 +1,10 @@
 #!/bin/sh
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+FILE_PATH=$(readlink "${BASH_SOURCE[0]}")
+if [ -z $FILE_PATH ]; then FILE_PATH="${BASH_SOURCE[0]}"; fi
+
+SCRIPT_DIR="$(cd "$(dirname "$FILE_PATH")" && pwd)"
+echo $SCRIPT_DIR
 
 java -jar $SCRIPT_DIR/scalariform-frograms.jar --scalaVersion=2.11.8 \
   -alignParameters \
