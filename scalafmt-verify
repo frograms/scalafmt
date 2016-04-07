@@ -3,7 +3,7 @@
 
 for sc in $( git diff --cached --name-only | grep '.scala$' )
 do
-  git show :$sc | ./reform --stdin -t
+  git show :$sc | scalafmt --stdin -t
   if [ $? -ne 0 ]; then
     echo "'$sc' is badly formed. run 'scalafmt-added'."
     exit 1
