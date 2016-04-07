@@ -11,7 +11,7 @@ This will create symbolic links for using `scalafmt` into your `/user/local/bin`
 ```shell
 scalafmt <file>
 scalafmt-added  # Reform all added scala files
-scalafmt-verify # Test whether added scala files well formed
+scalafmt-verify # Test all added scala changes
 ```
 
 # Uninstall
