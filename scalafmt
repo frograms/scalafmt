@@ -1,0 +1,34 @@
+#!/bin/sh
+
+FILE_PATH=$(readlink "${BASH_SOURCE[0]}")
+if [ -z $FILE_PATH ]; then FILE_PATH="${BASH_SOURCE[0]}"; fi
+
+SCRIPT_DIR="$(cd "$(dirname "$FILE_PATH")" && pwd)"
+echo $SCRIPT_DIR
+
+java -jar $SCRIPT_DIR/scalariform-frograms.jar --scalaVersion=2.11.8 \
+  -alignParameters \
+  -alignArguments \
+  -alignSingleLineCaseStatements \
+  -alignSingleLineCaseStatements.maxArrowIndent=40 \
+  -compactControlReadability \
+  -compactStringConcatenation \
+  +doubleIndentClassDeclaration \
+  +doubleIndentMethodDeclaration \
+  +formatXml \
+  -indentLocalDefs \
+  +indentPackageBlocks \
+  -indentSpaces=2 \
+  -indentWithTabs \
+  +multilineScaladocCommentsStartOnFirstLine \
+  -newlineAtEndOfFile \
+  +placeScaladocAsterisksBeneathSecondAsterisk \
+  -preserveSpaceBeforeArguments \
+  -danglingCloseParenthesis=Prevent \
+  -rewriteArrowSymbols \
+  -spaceBeforeColon \
+  -spaceInsideBrackets \
+  -spaceInsideParentheses \
+  +spacesWithinPatternBinders \
+  -spacesAroundMultiImports \
+  "$@"
