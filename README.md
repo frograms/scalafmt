@@ -10,7 +10,7 @@ This will create symbolic links for using `scalafmt` into your `/user/local/bin`
 # Usage
 ```shell
 scalafmt <file>
-scalafmt-added  # Reform all of added scala files
+scalafmt-added  # Reform all added scala files
 scalafmt-verify # Test whether added scala files well formed
 ```
 
