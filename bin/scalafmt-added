@@ -1,2 +1,2 @@
 #/bin/sh
-git diff --cached --name-only | grep '.scala$' | xargs scalafmt
+git diff --cached --name-only | grep '.scala$' | xargs ls -d 2> /dev/null | xargs scalafmt
