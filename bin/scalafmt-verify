@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/bash
 # Test whether added scala files correctly formatted.
 
 for sc in $( git diff --cached --name-only | grep '.scala$' )
